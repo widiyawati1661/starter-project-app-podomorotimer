@@ -27,9 +27,26 @@ function startStopTimer(){
     if (isRunning){
         clearInterval(timer);
         isRunning = false;
-        startStopButton,textContent = "Start";
+        startStopButton.textContent = "Start";
     } else {
-        timer = setInterval(countDown, 1000)
+        timer = setInterval(countDown, 1000);
+        isRunning = true;
+        startStopButton.textContent = "Stop";
     }
-
 }
+
+//buat menghu=itung mundur
+function countDown(){
+    if (seconds === 0 && minutes === 0){
+        clearInterval(timer);
+        switchSession();
+    } else if (seconds === 0){
+        minutes--;
+        seconds = 59;
+    } else {
+        seconds--;
+    }
+    updateTimerDisplay();
+}
+
+//beralih dariWork Time ke Istirahat

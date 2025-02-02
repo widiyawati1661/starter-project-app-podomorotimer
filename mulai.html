@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content ="width=device-width,initial-scale="1.0">
+        <title>Podomoro Timer</title>
+        <link rel="stylesheet" href="stylenya.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Podomoro Timer Saya</h1>
+            //disini akan diset timer 25 menit
+            <div id="timerDisplay" class="timer-display">25.00</div> 
+            //navigatornya
+            <div class="controls">
+                //fungsi startStopTimer buat mulai timer
+                <button id="startStop" onclick="startStopTimer()">Start</button>
+                /fungsi resetTimer buat muat ulang timer
+                <button id="reset" onclick="resetTimer()">Reset</button>
+            </div>
+            //disini akan ditandai sesi kerja atau sesi istirahat
+            //sesi Work
+            <div id="sessionType" class="session-type">Work Time</div>
+        </div>
+        <script src="stylenya.css"></script>
+    </body>
+</html>

@@ -49,4 +49,30 @@ function countDown(){
     updateTimerDisplay();
 }
 
-//beralih dariWork Time ke Istirahat
+//beralih dari Work Time ke Istirahat
+function switchSession(){
+    if (isWorkSession){
+        //setelah workt time selesai waktunya istirahat
+        minutes = 5; //waktu istirahat nay 5 menit
+        sessionTypeDisplay.textContent ="Break Time";
+    } else {
+        //setelah waktu istirahat selesai mulai lagi work time
+        minutes = 25; //waktu kerjanya 25 menit
+        sessionTypeDisplay.textContent ="Work Time";
+    }
+
+    //ubah ke sesi lain
+    isSession = !isWorkSession;
+    startStopButton.textContent = "Start Again";
+    isRunning = False;
+}
+
+//reset timer
+function resetTimer(){
+    clearInterval(timer);
+    minutes = 25; //reset ke waktu 25 menit
+    seconds = 0;
+    updateTimerDisplay;
+    sessionTypeDisplay.textContent ="Start Again Repeat";
+    isRunning = false;
+}
